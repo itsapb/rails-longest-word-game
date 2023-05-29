@@ -1,0 +1,13 @@
+
+
+<h1>Welome to the longest word-game!</h1>
+<h2>Here is your grid</h2>
+<h1><%=@random_letters%></h1>
+<hr>
+<h3>Submit your word</h3>
+<form action="/score" method="post" data-turbo="false">
+  <input type="text" name="answer">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :random_letters, @random_letters %>
+  <input type="submit" value="Submit!">
+</form>
